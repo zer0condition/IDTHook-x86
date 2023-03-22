@@ -77,7 +77,7 @@ NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING Regi
     }
 
     IsrInfo& isrInfo = isrList[0x21]; // IRQ1
-    UCHAR jumpInstruction[] = { 0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xE0 };
+    UCHAR jumpInstruction[] = { 0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xE0 };
     ULONG_PTR jumpOffset = reinterpret_cast<ULONG_PTR>(HookedIsr);
     memcpy(jumpInstruction + 2, &jumpOffset, sizeof(jumpOffset));
     memcpy(isrInfo.isrAddress, jumpInstruction, sizeof(jumpInstruction));
