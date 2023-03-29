@@ -1,6 +1,6 @@
 # ProjectZero-IDT
 
-Depreciated as of 2023
+For x86 based systems.
 
 ---
 
