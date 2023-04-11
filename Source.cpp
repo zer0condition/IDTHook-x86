@@ -48,9 +48,9 @@ VOID HookedIsr(_In_ ULONG64 vector) {
 
 NTSTATUS DriverEntry(_In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRING RegistryPath) {
 
-    PVOID idtBase = GetIDTBase();   // Get the Interrupt Descriptor Table (IDT) address
-    ULONG idtEntrySize = GetIDTEntrySize(); // Get the IDT entry size
-    ULONG idtSize = GetIDTSize();   // Get the number of IDT entries
+    PVOID idtBase = GetIDTBase();
+    ULONG idtEntrySize = GetIDTEntrySize();
+    ULONG idtSize = GetIDTSize();
 
     if (idtSize == NULL) {
         return STATUS_ABANDONED;
